@@ -1,3 +1,5 @@
+alert("Script is running!");
+console.log("Script is running!");
 d3.csv("../data/listings.csv").then(listings => {
 	console.log("Listings data:", listings);
     d3.csv("../data/neighbourhoods.csv").then(neighbourhoods => {
