@@ -1,6 +1,9 @@
 d3.csv("../data/listings.csv").then(listings => {
+	console.log("Listings data:", listings);
     d3.csv("../data/neighbourhoods.csv").then(neighbourhoods => {
+		console.log("neighbourhoods data:", neighbourhoods);
         d3.csv("../data/reviews.csv").then(reviews => {
+			console.log("Reviews data:", reviews);
             const data = processData(listings, neighbourhoods, reviews);
 
             const width = 1000;
