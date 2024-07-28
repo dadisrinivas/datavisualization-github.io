@@ -1,7 +1,7 @@
 d3.csv("data/listings.csv").then(listings => {
-    d3.csv("data/neighborhoods.csv").then(neighborhoods => {
+    d3.csv("data/neighbourhoods.csv").then(neighbourhoods => {
         d3.csv("data/reviews.csv").then(reviews => {
-            const data = processData(listings, neighborhoods, reviews);
+            const data = processData(listings, neighbourhoods, reviews);
 
             const width = 1000;
             const height = 600;
@@ -21,11 +21,11 @@ d3.csv("data/listings.csv").then(listings => {
     });
 });
 
-function processData(listings, neighborhoods, reviews) {
+function processData(listings, neighbourhoods, reviews) {
     // Implement data processing and merging here
-    // Example: merging listings with neighborhoods and reviews
+    // Example: merging listings with neighbourhoods and reviews
     return listings.map(listing => {
-        const neighborhood = neighborhoods.find(n => n.id === listing.neighbourhood_id);
+        const neighborhood = neighbourhoods.find(n => n.id === listing.neighbourhood_id);
         const review = reviews.find(r => r.listing_id === listing.id);
         return {
             ...listing,
@@ -118,7 +118,7 @@ function createScene3(svg, data, width, height, margin) {
         .attr("x", width / 2)
         .attr("y", height / 2 + 30)
         .attr("text-anchor", "middle")
-        .text("Based on the analysis, Manhattan has the highest average Airbnb prices while other neighborhoods vary significantly.")
+        .text("Based on the analysis, Manhattan has the highest average Airbnb prices while other neighbourhoods vary significantly.")
         .attr("class", "scene annotation");
 }
 
