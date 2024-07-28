@@ -23,7 +23,7 @@ d3.csv("data/listings.csv").then(listings => {
 
 function processData(listings, neighborhoods, reviews) {
     // Implement data processing and merging here
-    // Example: merging listings with neighborhoods and reviews - to be tested
+    // Example: merging listings with neighborhoods and reviews
     return listings.map(listing => {
         const neighborhood = neighborhoods.find(n => n.id === listing.neighbourhood_id);
         const review = reviews.find(r => r.listing_id === listing.id);
